@@ -43,7 +43,10 @@ def cutRange(bible):
 
 def Writer(book_name, chap, begin, end, target):
     f = open("C:\\Users\\user\\Documents\\python\\parsingBible.txt", "w")
-    f.write(book_name + "\n" + str(chap) + ":" + str(begin) + "~" + str(end) + "\n\n")
+    if begin<end:
+        f.write(book_name + "\n" + str(chap) + ":" + str(begin) + "~" + str(end) + "\n\n")
+    else:
+        f.write(book_name + "\n" + str(chap) + ":" + str(begin) + "\n\n")
     for t in target:
         f.write(t + '\n\n')
     f.close()
